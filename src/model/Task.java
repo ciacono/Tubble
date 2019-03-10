@@ -4,7 +4,6 @@ public class Task {
     double targetHours;
     double hoursSoFar;
     boolean isComplete;
-    AbstractFigure figure;
     private String name;
 
     public Task(String name, double targetHours) {
@@ -46,8 +45,8 @@ public class Task {
         this.name = name;
     }
 
-    public boolean taskComplete() {
+    public void taskComplete() {
         //call celebration
-        return (hoursSoFar >= targetHours);
+        this.isComplete = (hoursSoFar >= targetHours);
     }
 }
