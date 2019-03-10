@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 public class TubbleAppUI2 extends JFrame {
     JPanel inputPanel = new JPanel();
-    JLabel greeting = new JLabel();
+    JLabel greeting;
     JTextField nameTextField = new JTextField("Enter tubble name");
     JTextField hoursTextField = new JTextField("Enter target hours");
 
@@ -29,16 +29,15 @@ public class TubbleAppUI2 extends JFrame {
         addTubbleButton(inputPanel, nameTextField, hoursTextField);
 
         add(inputPanel);
-
     }
 
     // MODIFIES: inputPanel
     // EFFECTS: adds button to change spaceship coordinates to input panel
     private void addTubbleButton(JPanel inputPanel, final JTextField nameTextField, final JTextField hoursTextField) {
-        JButton button = new JButton(ButtonNames.NEW.getValue());
+        JButton button = new JButton(ButtonNames.CREATE.getValue());
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                // TODO: create tubble wen press button
+                // TODO: create tubble when press button
                 String nameStr = nameTextField.getText();
                 String hoursStr = hoursTextField.getText();
                 try {
@@ -52,8 +51,9 @@ public class TubbleAppUI2 extends JFrame {
         inputPanel.add(button);
     }
 
+    //Next 2 methods not working for placing greeting on screen
     //EFFECTS: constructs a home tab for console with buttons and a greeting
-    public void HomeTab(TubbleAppUI2 tubbleAppUI2) {
+    public void HomeTab(TubbleAppUI2 this) {
         setLayout(new GridLayout(3, 1));
         placeGreeting();
     }
