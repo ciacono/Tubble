@@ -1,7 +1,9 @@
 package ui;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import model.Task;
-import ui.tabs.*;
+import model.Tubble;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +20,8 @@ public class TubbleAppUI2 extends JFrame {
     private JTabbedPane sidebar;
     public static final int HOME_TAB_INDEX = 0;
 
+    TubbleRender renderer;
+
 
     TubbleAppUI2() {
         super("TubbleApp Console");
@@ -27,8 +31,9 @@ public class TubbleAppUI2 extends JFrame {
         inputPanel.add(nameTextField);
         inputPanel.add(hoursTextField);
         addTubbleButton(inputPanel, nameTextField, hoursTextField);
-
         add(inputPanel);
+
+//        inputPanel.add(new Circle(50,50,10));
     }
 
     // MODIFIES: inputPanel
@@ -43,6 +48,7 @@ public class TubbleAppUI2 extends JFrame {
                 try {
                     double hours = Integer.parseInt(hoursStr);
                     new Task(nameStr, hours);
+                    Tubble smallTubble = new Tubble(50, 50, 10, new Color(50, 50,50, 10)) ;
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(TubbleAppUI2.this, "Not integer input!");
                 }
@@ -50,6 +56,13 @@ public class TubbleAppUI2 extends JFrame {
         });
         inputPanel.add(button);
     }
+
+//    @Override
+//    // MODIFIES: graphics
+//    // EFFECTS:  clears screen and paints game onto graphics
+//    public void paint(Graphics graphics) {
+//        renderer.draw(graphics);
+//    }
 
     //Next 2 methods not working for placing greeting on screen
     //EFFECTS: constructs a home tab for console with buttons and a greeting
