@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
 
 public class TubbleAppUI2 extends JFrame {
     JPanel inputPanel = new JPanel();
@@ -22,6 +23,8 @@ public class TubbleAppUI2 extends JFrame {
 
     TubbleRender renderer;
 
+    Ellipse2D.Double circle;
+    Circle circleTubble = new Circle(50,50,10);
 
     TubbleAppUI2() {
         super("TubbleApp Console");
@@ -32,9 +35,14 @@ public class TubbleAppUI2 extends JFrame {
         inputPanel.add(hoursTextField);
         addTubbleButton(inputPanel, nameTextField, hoursTextField);
         add(inputPanel);
-
-//        inputPanel.add(new Circle(50,50,10));
     }
+
+
+//    public CircleComponent(int radius)
+//    {
+//        circle = new Ellipse2D.Double(0, 0, radius, radius);
+////        setOpaque(false);
+//    }
 
     // MODIFIES: inputPanel
     // EFFECTS: adds button to change spaceship coordinates to input panel
@@ -48,7 +56,9 @@ public class TubbleAppUI2 extends JFrame {
                 try {
                     double hours = Integer.parseInt(hoursStr);
                     new Task(nameStr, hours);
-                    Tubble smallTubble = new Tubble(50, 50, 10, new Color(50, 50,50, 10)) ;
+                    PanelClass pc = new PanelClass();
+                    inputPanel.add(pc);
+                    repaint();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(TubbleAppUI2.this, "Not integer input!");
                 }
@@ -56,6 +66,14 @@ public class TubbleAppUI2 extends JFrame {
         });
         inputPanel.add(button);
     }
+
+//    protected void paintComponent(Graphics g) {
+//        super.paintComponent(g);
+//        if (circle != null) {
+//            // get the state from circle and paint
+//            g.fillOval(circle.getX(), circle.getY(), getWidth(), getHeight());
+//        }
+//    }
 
 //    @Override
 //    // MODIFIES: graphics
