@@ -1,6 +1,7 @@
 package model;
 
 public class Task {
+
     double targetHours;
     double hoursSoFar;
     boolean isComplete;
