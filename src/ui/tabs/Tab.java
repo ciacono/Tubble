@@ -1,17 +1,16 @@
 package ui.tabs;
 
-import model.Tubble;
-import ui.TubbleApp;
+import ui.TubbleAppUI;
 
 import javax.swing.*;
 import java.awt.*;
 
 abstract class Tab extends JPanel {
-    private TubbleApp tubbleApp;
+    private TubbleAppUI tubbleAppUI;
 
     //REQUIRES: SmartHomeUI controller that holds this tab
-    public Tab(TubbleApp tubbleApp){
-        this.tubbleApp = tubbleApp;
+    public Tab(TubbleAppUI tubbleAppUI){
+        this.tubbleAppUI = tubbleAppUI;
     }
 
     //EFFECTS: creates and returns row with button included
@@ -24,8 +23,8 @@ abstract class Tab extends JPanel {
     }
 
     //EFFECTS: returns the SmartHomeUI controller for this tab
-    public TubbleApp getTubbleApp(){
-        return this.tubbleApp;
+    public TubbleAppUI getTubbleAppUI(){
+        return this.tubbleAppUI;
     }
 
 }
