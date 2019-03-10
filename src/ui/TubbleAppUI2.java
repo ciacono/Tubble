@@ -65,19 +65,6 @@ public class TubbleAppUI2 extends JFrame {
         this.add(greeting);
     }
 
-//    //MODIFIES: this
-//    //EFFECTS: adds home tab, settings tab and report tab to this UI
-//    private void loadTabs() {
-//        JPanel homeTab = new HomeTab(this);
-//
-//        sidebar.add(homeTab, HOME_TAB_INDEX);
-//        sidebar.setTitleAt(HOME_TAB_INDEX, "Home");
-////        sidebar.add(settingsTab, SETTINGS_TAB_INDEX);
-////        sidebar.setTitleAt(SETTINGS_TAB_INDEX, "Settings");
-////        sidebar.add(reportTab, REPORT_TAB_INDEX);
-////        sidebar.setTitleAt(REPORT_TAB_INDEX, "Report");
-//    }
-
     //launch program
     public static void main(String[] args) {
         new TubbleAppUI2();
