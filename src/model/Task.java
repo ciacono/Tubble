@@ -48,6 +48,9 @@ public class Task {
 
     public boolean taskComplete() {
         //call celebration
-        return (hoursSoFar >= targetHours);
+        if (hoursSoFar >= targetHours) {
+            isComplete = true;
+        }
+        return isComplete;
     }
 }
