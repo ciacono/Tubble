@@ -1,9 +1,7 @@
 package ui;
 
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import model.Task;
-import model.Tubble;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,8 +53,7 @@ public class TubbleAppUI2 extends JFrame {
                 try {
                     double hours = Integer.parseInt(hoursStr);
                     new Task(nameStr, hours);
-                    PanelClass pc = new PanelClass();
-                    inputPanel.add(pc);
+                    inputPanel.add(new PanelClass());
                     repaint();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(TubbleAppUI2.this, "Not integer input!");
