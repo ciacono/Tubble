@@ -1,9 +1,9 @@
 package ui;
 
 public enum ButtonNames {
-    NEW ("New tubble"),
-    VIEW ("View tubbles"),
-    CREATE ("Create tubble");
+    NEW ("new tubble"),
+    VIEW ("view tubbles"),
+    CREATE ("create tubble");
 
     private final String name;
 

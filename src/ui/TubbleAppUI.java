@@ -7,16 +7,17 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TubbleAppUI extends JFrame {
+public class TubbleAppUI extends JFrame{
 
     public static final int HOME_TAB_INDEX = 0;
     public static final int SETTINGS_TAB_INDEX = 1;
     public static final int REPORT_TAB_INDEX = 2;
 
-    public static final int WIDTH = 600;
-    public static final int HEIGHT = 400;
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 800;
     private JTabbedPane sidebar;
     private Task task;
+    private HomeTab homeTab;
 
     public Task getTask() {
         return task;
@@ -34,15 +35,14 @@ public class TubbleAppUI extends JFrame {
         setSize(WIDTH, HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        task = new Task();
-
         sidebar = new JTabbedPane();
         sidebar.setTabPlacement(JTabbedPane.LEFT);
 
         loadTabs();
         add(sidebar);
-
         setVisible(true);
+        initFrame();
+        add(initInputPanel());
     }
 
     //MODIFIES: this
@@ -63,15 +63,50 @@ public class TubbleAppUI extends JFrame {
         return sidebar;
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds components to frame, do layout and make frame visible
+    private void initFrame() {
+//        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        addComponents();
+//        pack();
+//        setLocationRelativeTo(null);
+//        setVisible(true);
+//        setResizable(false);
+        JTextField t1, t2;
+        t1 = new JTextField("tubble name?");
+        t1.setBounds(150, 150, 200, 30);
+        t2 = new JTextField("hours to spend?");
+        t2.setBounds(150, 200, 200, 30);
+        this.add(t1);
+        this.add(t2);
+        String name = t1.getText();
+        t1.selectAll();
+
+        String hour = t2.getText();
+        t2.selectAll();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: adds components to frame
+    private void addComponents() {
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        JPanel inputPanel = initInputPanel();
+        container.add(inputPanel);
+        add(container);
+    }
+
     // EFFECTS: initializes the input panel and returns it
     private JPanel initInputPanel() {
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
 
-        JTextField moveXTextField = initTextField("Move X By: ", inputPanel);
-        JTextField moveYTextField = initTextField("Move Y By: ", inputPanel);
+        JTextField nameTextField = initTextField("tubble name: ", inputPanel);
+        JTextField hoursTextField = initTextField("tubble hours: ", inputPanel);
 
-        addTubbleButton(inputPanel, moveXTextField, moveYTextField);
+        addTubbleButton(inputPanel, nameTextField, hoursTextField);
+        inputPanel.add(nameTextField);
+        inputPanel.add(hoursTextField);
 
         return inputPanel;
     }
@@ -88,7 +123,7 @@ public class TubbleAppUI extends JFrame {
     // MODIFIES: inputPanel
     // EFFECTS: adds button to change spaceship coordinates to input panel
     private void addTubbleButton(JPanel inputPanel, final JTextField nameTextField, final JTextField hoursTextField) {
-        JButton button = new JButton("Create Tubble!");
+        JButton button = new JButton();
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 String nameStr = nameTextField.getText();
@@ -97,11 +132,12 @@ public class TubbleAppUI extends JFrame {
                     double hours = Integer.parseInt(hoursStr);
                     new Task(nameStr, hours);
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(TubbleAppUI.this, "Not integer input(s)!");
+                    JOptionPane.showMessageDialog(TubbleAppUI.this, "Not integer input!");
                 }
             }
         });
 
         inputPanel.add(button);
     }
+
 }

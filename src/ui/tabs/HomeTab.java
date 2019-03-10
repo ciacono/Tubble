@@ -1,6 +1,5 @@
 package ui.tabs;
 
-import model.Task;
 import ui.ButtonNames;
 import ui.TubbleAppUI;
 
@@ -11,7 +10,7 @@ import java.awt.event.ActionListener;
 
 public class HomeTab extends Tab {
 
-    private static final String INIT_GREETING = "tubble";
+    private static final String INIT_GREETING = "tubble: a time bubble to get you out of trouble!";
     private JLabel greeting;
 
     //EFFECTS: constructs a home tab for console with buttons and a greeting
@@ -45,7 +44,6 @@ public class HomeTab extends Tab {
                 if(buttonPressed.equals(ButtonNames.NEW.getValue())) {
                     //TODO: go to next tab when press this button
                 }
-
             }
         });
 
