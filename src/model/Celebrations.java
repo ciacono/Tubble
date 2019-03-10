@@ -42,5 +42,6 @@ public class Celebrations {
         addPhrase("Productivity beast, you are");
         addPhrase("Limits do not apply to you. Keep going");
         addPhrase("You got this");
+        addPhrase("Git it!");
     }
 }
