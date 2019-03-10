@@ -34,12 +34,6 @@ public class TubbleAppUI2 extends JFrame {
     }
 
 
-//    public CircleComponent(int radius)
-//    {
-//        circle = new Ellipse2D.Double(0, 0, radius, radius);
-////        setOpaque(false);
-//    }
-
     // MODIFIES: inputPanel
     // EFFECTS: adds button to change spaceship coordinates to input panel
     private void addTubbleButton(JPanel inputPanel, final JTextField nameTextField, final JTextField hoursTextField) {
@@ -62,20 +56,6 @@ public class TubbleAppUI2 extends JFrame {
         inputPanel.add(button);
     }
 
-//    protected void paintComponent(Graphics g) {
-//        super.paintComponent(g);
-//        if (circle != null) {
-//            // get the state from circle and paint
-//            g.fillOval(circle.getX(), circle.getY(), getWidth(), getHeight());
-//        }
-//    }
-
-//    @Override
-//    // MODIFIES: graphics
-//    // EFFECTS:  clears screen and paints game onto graphics
-//    public void paint(Graphics graphics) {
-//        renderer.draw(graphics);
-//    }
 
     //Next 2 methods not working for placing greeting on screen
     //EFFECTS: constructs a home tab for console with buttons and a greeting
