@@ -18,7 +18,6 @@ public class TubbleAppUI2 extends JFrame {
     JTextField hoursTextField = new JTextField("Enter target hours");
 
     private static final String INIT_GREETING = "tubble: a time bubble to get you out of trouble!";
-    private JTabbedPane sidebar;
     public static final int HOME_TAB_INDEX = 0;
 
     TubbleRender renderer;
