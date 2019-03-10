@@ -18,7 +18,6 @@ public class TubbleAppUI2 extends JFrame {
     private static final String INIT_GREETING = "tubble: a time bubble to get you out of trouble!";
     public static final int HOME_TAB_INDEX = 0;
 
-    TubbleRender renderer;
 
     Ellipse2D.Double circle;
     Circle circleTubble = new Circle(50,50,10);
