@@ -55,9 +55,9 @@ public class TubbleAppUI2 extends JFrame {
                 try {
                     double hours = Integer.parseInt(hoursStr);
                     new Task(nameStr, hours);
-                    PanelClass pc = new PanelClass();
-                    inputPanel.add(pc);
-                    repaint();
+//                    PanelClass pc = new PanelClass();
+//                    inputPanel.add(pc);
+//                    repaint();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(TubbleAppUI2.this, "Not integer input!");
                 }
