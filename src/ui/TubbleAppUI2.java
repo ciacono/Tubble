@@ -4,7 +4,6 @@ import javafx.scene.shape.Circle;
 import model.Task;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
@@ -27,6 +26,9 @@ public class TubbleAppUI2 extends JFrame {
         setVisible(true);
         setSize(1200, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        greeting = new JLabel(INIT_GREETING, JLabel.CENTER);
+        greeting.setSize(10,10);
+        inputPanel.add(greeting);
         inputPanel.add(nameTextField);
         inputPanel.add(hoursTextField);
         addTubbleButton(inputPanel, nameTextField, hoursTextField);
@@ -54,21 +56,6 @@ public class TubbleAppUI2 extends JFrame {
             }
         });
         inputPanel.add(button);
-    }
-
-
-    //Next 2 methods not working for placing greeting on screen
-    //EFFECTS: constructs a home tab for console with buttons and a greeting
-    public void HomeTab(TubbleAppUI2 this) {
-        setLayout(new GridLayout(3, 1));
-        placeGreeting();
-    }
-
-    //EFFECTS: creates greeting at top of console
-    private void placeGreeting(){
-        greeting = new JLabel(INIT_GREETING, JLabel.CENTER);
-        greeting.setSize(WIDTH, HEIGHT / 3);
-        this.add(greeting);
     }
 
     //launch program
