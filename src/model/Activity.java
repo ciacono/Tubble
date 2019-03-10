@@ -1,5 +1,6 @@
 package model;
 
 public class Activity {
-    private void activity(){};
+    private void activity() {}
+    String test;
 }
