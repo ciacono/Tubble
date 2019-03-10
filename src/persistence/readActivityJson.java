@@ -13,6 +13,7 @@ public class readActivityJson {
     }
 
     public Activity readActivityJsonStream(InputStream in) throws IOException {
+        
         JsonReader reader = new JsonReader(new InputStreamReader( in, "UTF-8"));
         Gson gson = new Gson();
         Activity activity = new Activity();
