@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
-//
+//...
 public class PanelClass extends JPanel {
 
     public PanelClass() {
